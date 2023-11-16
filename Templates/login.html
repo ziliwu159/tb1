@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        
+        <div class="col-md-6">
+        <h3 class="display-3">Halaman Login</h3>
+        <hr>
+            <div class="card">
+                <div class="card-header">
+                    Login
+                </div>
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul>
+                            {% for category, message in messages %}
+                                {% if category == 'error' %}
+                                    <li style="color: red;">{{ message }}</li>
+                                {% elif category == 'success' %}
+                                    <li style="color: green;">{{ message }}</li>
+                                {% endif %}
+                                
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+
+
+                <div class="card-body">
+                    <form action="/verifikasi-login" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

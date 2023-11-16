@@ -1,0 +1,77 @@
+{% extends "layout.html" %} {% block kontenku %}
+
+<h2 class="display-6">Ubah Mata Kuliah</h2>
+<hr />
+<div class="row justify-content-center">
+  <div class="col-md-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/matakuliah">Data Mata Kuliah</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Ubah Mata Kuliah
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card card-body">
+      <form action="/matakuliah/update/{{contact.0}}" method="POST">
+        <div class="mb-3">
+          <label for="kode" class="form-label">Kode</label>
+          <input
+            type="text"
+            name="kode"
+            value="{{contact.0}}"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="judul" class="form-label">Judul</label>
+          <input
+            type="text"
+            name="judul"
+            value="{{contact.1}}"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="deskripsi" class="form-label">Deskripsi</label>
+          <input
+            type="text"
+            name="deskripsi"
+            value="{{contact.2}}"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sks" class="form-label">SKS</label>
+          <input
+            type="text"
+            name="sks"
+            value="{{contact.3}}"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="programstudi" class="form-label">Program Studi</label>
+          <input
+            type="text"
+            name="programstudi"
+            value="{{contact.4}}"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary btn-block">
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

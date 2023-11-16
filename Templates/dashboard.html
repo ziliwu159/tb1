@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block kontenku %}
+
+  <h2 class="display-6">Selamat datang di SIM!</h2>
+  <hr>
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+  <header><img src="{{ url_for('static', filename='images/header.jpg')}}" width="100%" alt="Header Kontak" /></header>
+
+
+  <div class="row">
+    <div class="col-md-12"><br>   <br>
+        <h4><center>ADMIN SIM</center></h4>
+        <table>
+          <tr>
+            <img src="coba.png" alt="">
+            
+          </tr>
+        </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

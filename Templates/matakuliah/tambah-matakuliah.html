@@ -1,0 +1,48 @@
+{% extends "layout.html" %} {% block kontenku %}
+
+<h2 class="display-6">Tambah Mata Kuliah</h2>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/matakuliah">Mata Kuliah</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tambah Mata Kuliah</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="col-md-8">
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <div class="card card-body">
+            <form action="/matakuliah/insert" method="POST">
+                <div class="mb-3">
+                    <label for="kode" class="form-label">Kode</label>
+                    <input type="number" class="form-control" name="kode" placeholder="Kode" />
+                </div>
+                <div class="mb-3">
+                    <label for="judul" class="form-label">Judul</label>
+                    <input type="text" class="form-control" name="judul" placeholder="Judul" />
+                </div>
+                <div class="mb-3">
+                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                    <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi" />
+                </div>
+                <div class="mb-3">
+                    <label for="sks" class="form-label">SKS</label>
+                    <input type="number" class="form-control" name="sks" placeholder="SKS" />
+                </div>
+                <div class="mb-3">
+                    <label for="programstudi" class="form-label">Program Studi</label>
+                    <input type="text" class="form-control" name="programstudi" placeholder="Program Studi" />
+                </div>
+                <button class="btn btn-primary btn-block">Tambah</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
