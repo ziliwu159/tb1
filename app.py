@@ -56,7 +56,7 @@ def dashboard():
 @app.route('/mahasiswa', methods = ['GET'])
 def data_mahasiswa():
     cur = mysql.connection.cursor()
-    cur.execute('SELECT id,nim,nama_lengkap,alamat FROM students')
+    cur.execute('SELECT id,nim,nama_lengkap,alamat FROM students ORDER BY nama_lengkap')
     data = cur.fetchall()
     cur.close()
     return render_template('mahasiswa/data-mahasiswa.html', mahasiswa = data)
