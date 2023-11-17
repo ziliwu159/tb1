@@ -128,14 +128,13 @@ def tambah_matakuliah():
 @app.route('/matakuliah/insert', methods=['POST'])
 def add_kuliah():
     if request.method == 'POST':
-        kode = request.form['kode']
         judul = request.form['judul']
         deskripsi = request.form['deskripsi']
         sks = request.form['sks']
         programstudi = request.form['programstudi']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO mata_kuliah (kode, judul, deskripsi, sks, programstudi) VALUES (%s,%s,%s,%s,%s)", 
-        (kode, judul, deskripsi, sks, programstudi))
+        cur.execute("INSERT INTO mata_kuliah ( judul, deskripsi, sks, programstudi) VALUES (%s,%s,%s,%s)", 
+        (judul, deskripsi, sks, programstudi))
         mysql.connection.commit()
         flash('Mata kuliah berhasil ditambahkan!')
         return redirect(url_for('data_kuliah'))
@@ -173,6 +172,16 @@ def delete_contact1(kode):
     mysql.connection.commit()
     flash('Mata Kuliah berhasil dihapus!')
     return redirect(url_for('data_kuliah'))
+
+
+# if
+@app.route('/matakuliah/ProdiIF', methods = ['GET'])
+def matkul_prodi():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Teknik Informatika'")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('matakuliah/data-kuliah-prodi/IF.html', matakuliah = data)
 
 # Jalankan aplikasi dengan port 9999
 if __name__ == "__main__":
