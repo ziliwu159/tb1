@@ -1,59 +1,83 @@
-{% extends "layout.html" %}
-{% block kontenku %}
+{% extends "layout.html" %} {% block kontenku %}
 
-  <h2 class="display-6">Selamat datang di SIM!</h2>
-  <hr>
-  {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-  <div class="alert alert-success alert-dismissible fade show" role="alert">
-      {{ message }}
+<h2 class="display-6">Selamat datang di SIM!</h2>
+<hr />
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ message }}
+</div>
+{% endfor %} {% endif %} {% endwith %}
+<header>
+  <img
+    src="{{ url_for('static', filename='images/header.jpg')}}"
+    width="100%"
+    alt="Header Kontak"
+  />
+</header>
+
+<div class="row">
+  <div class="col-md-12 ">
+    <br />
+    <br />
+    <h4><center>ADMIN SIM</center></h4><br>
   </div>
-  {% endfor %} {% endif %} {% endwith %}
-  <header><img src="{{ url_for('static', filename='images/header.jpg')}}" width="100%" alt="Header Kontak" /></header>
-
-
-  <div class="row">
-    <div class="col-md-12"><br>   <br>
-        <h4><center>ADMIN SIM</center></h4>
-        <div class="row">
-    <div class="col-md-8">
-    <br>
-    <br>
-    <table>
+  <div class="col-lg-12 d-flex justify-content-center ms-5">
+    <table  cellpadding="10">
       <tr>
-        <td><img src="{{ url_for('static', filename='images/yulia.jpg')}}" style="width: 13.5rem; height: 100%; margin-right: 5rem;"></td>
-        <td><img src="{{ url_for('static', filename='images/yulia.jpg')}}" style="width: 13.5rem; height: 100%; margin-right: 5rem;"></td>
-        <td><img src="{{ url_for('static', filename='images/yulia.jpg')}}" style="width: 13.5rem; height: 100%; margin-right: 5rem;"></td>
-        <td><img src="{{ url_for('static', filename='images/yulia.jpg')}}" style="width: 13.5rem; height: 100%; margin-right: 5rem;"></td>
+        <td>
+          <img class="shadow rounded"
+            src="{{ url_for('static', filename='images/yulia.jpg')}}"
+            style="width: 13.5rem; height: 100%; margin-right: 5rem"
+          />
+        </td>
+        <td>
+          <img class="shadow rounded" 
+            src="{{ url_for('static', filename='images/yulia.jpg')}}"
+            style="width: 13.5rem; height: 100%; margin-right: 5rem"
+          />
+        </td>
+        <td>
+          <img class="shadow rounded" 
+            src="{{ url_for('static', filename='images/yulia.jpg')}}"
+            style="width: 13.5rem; height: 100%; margin-right: 5rem"
+          />
+        </td>
+        <td>
+          <img class="shadow rounded" 
+            src="{{ url_for('static', filename='images/yulia.jpg')}}"
+            style="width: 13.5rem; height: 100%; margin-right: 5rem"
+          />
+        </td>
+      </tr>
+
       <tr>
         <td>YULIA PIPKA ZILIWU</td>
         <td>KEVIN REYNALDI PANJAITAN</td>
         <td>KENNY ARAGON SIAHAAN</td>
         <td>YURISHA ANINDYA</td>
       </tr>
-    <tr>
-      <td>3312301035</td>
-      <td>3312301037</td>
-      <td>3312301045</td>
-      <td>3312301053</td>
-    </tr>
-    <tr>
-      <td>IF 1B</td>
-      <td>IF 1B</td>
-      <td>IF 1B</td>
-      <td>IF 1B</td>
-    </tr>
-    <tr>
-      <td>yulipipk@gmail.com</td>
-      <td>yulipipk@gmail.com</td>
-      <td>yulipipk@gmail.com</td>
-      <td>yulipipk@gmail.com</td>
-    </tr>
-  </table>
-    
-</div>
-
+      <tr>
+        <td>3312301035</td>
+        <td>3312301037</td>
+        <td>3312301045</td>
+        <td>3312301053</td>
+      </tr>
+      <tr>
+        <td>IF 1B</td>
+        <td>IF 1B</td>
+        <td>IF 1B</td>
+        <td>IF 1B</td>
+      </tr>
+      <tr>
+        <td>yulipipk@gmail.com</td>
+        <td>yulipipk@gmail.com</td>
+        <td>yulipipk@gmail.com</td>
+        <td>yurishaanindya154@gmail.com</td>
+      </tr>
+    </table>
   </div>
 </div>
 
-
-{% endblock %}
+  {% endblock %}
+</div>
