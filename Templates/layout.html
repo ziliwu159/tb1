@@ -5,8 +5,8 @@
         <title>SIK WEBAPP</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <h2 class="text-white fw-bold">SIM</h2>
@@ -14,10 +14,10 @@
 
                 <div>
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
-                        <a class="nav-link" href="/mahasiswa">Mahasiswa</a>
-                        <a class="nav-link" href="/matakuliah">Mata Kuliah</a>
-                        <a class="nav-link" href="/logout">Logout</a>
+                        <a class="nav-link active aria-current="page" href="/dashboard" style="margin-right: 1rem;">Dashboard</a>
+                        <a class="nav-link active" href="/mahasiswa" style="margin-right: 1rem;">Mahasiswa</a>
+                        <a class="nav-link active" href="/matakuliah" style="margin-right: 1rem;">Mata Kuliah</a>
+                        <a class="nav-link active" href="/logout" style="margin-right: 1rem;">Logout</a>
 
                     </div>
                 </div>
@@ -26,7 +26,7 @@
 
         <div class="container pt-4">{% block kontenku %} {% endblock %}</div>
 
-        <footer class="mt-5 text-center">Copyright &copy 2023</footer>
+        <footer class="mt-5 text-center">Copyright &copy by team six of IF 1B</footer>
 
         <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     </body>
