@@ -57,12 +57,18 @@
         </div>
         <div class="mb-3">
           <label for="programstudi" class="form-label">Program Studi</label>
-          <input
+          <!-- <input
             type="text"
             name="programstudi"
             value="{{contact.4}}"
             class="form-control"
-          />
+          /> -->
+          <select name="programstudi" class="form-select" aria-label="Default select example">
+            <option selected disabled>-- Program Studi --</option>
+            <option value="Teknik Informatika" {{ 'selected' if contact.4 =='Teknik Informatika' else '' }}>Teknik Informatika</option>
+            <option value="Geomatika" {{ 'selected' if contact.4 =='Geomatika' else '' }}>Geomatika</option>
+            <option value="Teknik Rekayasa Multimedia" {{ 'selected' if contact.4 =='Teknik Rekayasa Multimedia' else '' }}>Teknik Rekayasa Multimedia</option>
+        </select>
         </div>
         <div class="mb-3">
           <button type="submit" class="btn btn-primary btn-block">

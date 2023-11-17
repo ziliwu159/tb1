@@ -20,10 +20,6 @@
         <div class="card card-body">
             <form action="/matakuliah/insert" method="POST">
                 <div class="mb-3">
-                    <label for="kode" class="form-label">Kode</label>
-                    <input type="number" class="form-control" name="kode" placeholder="Kode" />
-                </div>
-                <div class="mb-3">
                     <label for="judul" class="form-label">Judul</label>
                     <input type="text" class="form-control" name="judul" placeholder="Judul" />
                 </div>
@@ -37,7 +33,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="programstudi" class="form-label">Program Studi</label>
-                    <input type="text" class="form-control" name="programstudi" placeholder="Program Studi" />
+                    <!-- <input type="text" class="form-control" name="programstudi" placeholder="Program Studi" /> -->
+                    <select name="programstudi" class="form-select" aria-label="Default select example">
+                        <option selected disabled>-- Program Studi --</option>
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Geomatika">Geomatika</option>
+                        <option value="Teknik Rekayasa Multimedia">Teknik Rekayasa Multimedia</option>
+                    </select>
                 </div>
                 <button class="btn btn-primary btn-block">Tambah</button>
             </form>
