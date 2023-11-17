@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block kontenku %}
+  <h2 class="display-6">Manajemen Mata Kuliah</h2>
+  <hr>
+  <a href="/matakuliah/tambah" class="btn btn-warning mb-1 mt-2"><i class="fa-solid fa-plus"></i> Tambah</a>
+
+  <div class="d-flex justify-content-end mb-3">
+    <div class="dropdown me-2 ">
+      <button class="btn btn-warning dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Program Studi
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="IF">IF</a></li>
+        <li><a class="dropdown-item" href="TRM">TRM</a></li>
+        <li><a class="dropdown-item" href="GM">GM</a></li>
+      </ul>
+    </div>
+    <div class="dropdown ">
+      <button class="btn btn-warning dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Semester
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="matakuliah/Prodi">1 - 2</a></li>
+        <li><a class="dropdown-item" href="#">3 - 4</a></li>
+        <li><a class="dropdown-item" href="#">5 - 6</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row">
+   
+    
+    <div class="col-md-12">
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ message }}
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+      <table class="table table-striped">
+        <thead>
+          <tr class="bg-secondary text-white">
+            <td>Kode</td>
+            <td>Judul</td>
+            <td>Deskripsi </td>
+            <td>SKS</td>
+            <td>Program Studi</td>
+            <td>Aksi</td>
+          </tr>
+        </thead>
+        {% block table %} {% endblock %}
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

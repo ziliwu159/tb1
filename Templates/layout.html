@@ -7,6 +7,7 @@
 
         <!-- font awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     </head>
     <body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
         <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
@@ -27,9 +28,12 @@
             </div>
         </nav>
 
-        <div class="container pt-4">{% block kontenku %} {% endblock %}</div>
+        <div class="container pt-4">
+            <br><br><br>
+            {% block kontenku %} {% endblock %}</div>
+            <br><br><br><br><br>
 
-        <footer class="mt-5 text-center">Copyright &copy by team six of IF 1B</footer>
+        <footer class="mt-5 text-center  bg-info text-white p-2">Copyright &copy by 6th Team of IF 1B</footer>
 
         <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     </body>

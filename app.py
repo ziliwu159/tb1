@@ -116,7 +116,7 @@ def delete_contact(id):
 @app.route('/matakuliah', methods = ['GET'])
 def data_kuliah():
     cur = mysql.connection.cursor()
-    cur.execute('SELECT kode, judul, deskripsi, sks, programstudi FROM mata_kuliah')
+    cur.execute('SELECT * FROM mata_kuliah ORDER BY programstudi')
     data = cur.fetchall()
     cur.close()
     return render_template('matakuliah/data-kuliah.html', matakuliah = data)
@@ -173,15 +173,29 @@ def delete_contact1(kode):
     flash('Mata Kuliah berhasil dihapus!')
     return redirect(url_for('data_kuliah'))
 
-
-# if
-@app.route('/matakuliah/ProdiIF', methods = ['GET'])
-def matkul_prodi():
+@app.route('/matakuliah/IF', methods = ['GET'])
+def IF():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Teknik Informatika'")
     data = cur.fetchall()
     cur.close()
-    return render_template('matakuliah/data-kuliah-prodi/IF.html', matakuliah = data)
+    return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/IF', matakuliah = data)
+
+@app.route('/matakuliah/TRM', methods = ['GET'])
+def TRM():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Teknik Rekayasa Multimedia'")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/TRM', matakuliah = data)
+
+@app.route('/matakuliah/GM', methods = ['GET'])
+def GM():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Geomatika'")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/GM', matakuliah = data)
 
 # Jalankan aplikasi dengan port 9999
 if __name__ == "__main__":
