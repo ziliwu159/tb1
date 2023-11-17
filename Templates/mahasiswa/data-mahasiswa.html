@@ -3,7 +3,7 @@
 
   <h2 class="display-6">Manajemen Data Mahasiswa</h2>
   <hr>
-  <a href="/mahasiswa/tambah" class="btn btn-warning mb-4 mt-2"> Tambah Mahasiswa</a>
+  <a href="/mahasiswa/tambah" class="btn btn-warning mb-4 mt-2"><i class="fa-solid fa-plus"></i> Tambah Mahasiswa</a>
 
   <div class="row">
   
@@ -32,8 +32,8 @@
             <td>{{item.2}}</td>
             <td>{{item.3}}</td>
             <td>
-              <a href="/mahasiswa/edit/{{item.0}}" class="btn btn-primary">Ubah</a>
-              <a href="/mahasiswa/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="confirm('Yakin???')">Hapus</a>
+              <a href="/mahasiswa/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
+              <a href="/mahasiswa/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="confirm('Yakin???')"> <i class="fa-solid fa-trash"></i> Hapus</a>
             </td>
           </tr>
           {% endfor %}

@@ -3,28 +3,28 @@
 
   <h2 class="display-6">Manajemen Mata Kuliah</h2>
   <hr>
-  <a href="/matakuliah/tambah" class="btn btn-warning mb-1 mt-2"> Tambah Mata Kuliah</a>
+  <a href="/matakuliah/tambah" class="btn btn-warning mb-1 mt-2"><i class="fa-solid fa-plus"></i> Tambah Mata Kuliah</a>
 
   <div class="dropdown d-flex justify-content-end mb-3">
     <button class="btn btn-warning dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
       Kelas
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <li><a class="dropdown-item" href="matakuliah/Prodi">IF</a></li>
+      <li><a class="dropdown-item" href="#">TRM</a></li>
+      <li><a class="dropdown-item" href="#">GM</a></li>
     </ul>
   </div>
 
   <div class="row">
    
-    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ message }}
-    </div>
-    {% endfor %} {% endif %} {% endwith %}
-
+    
     <div class="col-md-12">
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ message }}
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
       <table class="table table-striped">
         <thead>
           <tr class="bg-secondary text-white">
@@ -45,8 +45,8 @@
             <td>{{item.3}}</td>
             <td>{{item.4}}</td>
             <td>
-              <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary">Ubah</a>
-              <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')">Hapus</a>
+              <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
+              <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
             </td>
           </tr>
           {% endfor %}
