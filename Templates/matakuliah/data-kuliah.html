@@ -3,7 +3,18 @@
 
   <h2 class="display-6">Manajemen Mata Kuliah</h2>
   <hr>
-  <a href="/matakuliah/tambah" class="btn btn-dark mb-4 mt-2"> Tambah Mata Kuliah</a>
+  <a href="/matakuliah/tambah" class="btn btn-warning mb-1 mt-2"> Tambah Mata Kuliah</a>
+
+  <div class="dropdown d-flex justify-content-end mb-3">
+    <button class="btn btn-warning dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Kelas
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
 
   <div class="row">
    
@@ -35,7 +46,7 @@
             <td>{{item.4}}</td>
             <td>
               <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary">Ubah</a>
-              <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="confirm('Yakin???')">Hapus</a>
+              <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')">Hapus</a>
             </td>
           </tr>
           {% endfor %}

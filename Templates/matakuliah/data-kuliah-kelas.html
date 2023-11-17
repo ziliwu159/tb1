@@ -3,20 +3,10 @@
 
   <h2 class="display-6">Manajemen Mata Kuliah</h2>
   <hr>
-  <a href="/matakuliah/tambah" class="btn btn-dark mb-4 mt-2"> Tambah Mata Kuliah</a>
-  <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-  Kelas</a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
+  <a href="/matakuliah/tambah" class="btn btn-warning mb-4 mt-2"> Tambah Mata </a>
+  
 
   <div class="row">
-   
     {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ message }}
@@ -53,6 +43,6 @@
       </table>
     </div>
   </div>
-</div>
+
 
 {% endblock %}

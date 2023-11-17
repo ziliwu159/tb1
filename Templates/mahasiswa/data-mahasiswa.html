@@ -6,7 +6,7 @@
   <a href="/mahasiswa/tambah" class="btn btn-warning mb-4 mt-2"> Tambah Mahasiswa</a>
 
   <div class="row">
-   
+  
     {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ message }}
@@ -41,6 +41,6 @@
       </table>
     </div>
   </div>
-</div>
+
 
 {% endblock %}
