@@ -111,7 +111,9 @@ def delete_contact(id):
     flash('Data mahasiswa berhasil dihapus!')
     return redirect(url_for('data_mahasiswa'))
 
-#d
+
+
+
 
 @app.route('/matakuliah', methods = ['GET'])
 def data_kuliah():
@@ -132,8 +134,9 @@ def add_kuliah():
         deskripsi = request.form['deskripsi']
         sks = request.form['sks']
         programstudi = request.form['programstudi']
+        semester = request.form['semester']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO mata_kuliah ( judul, deskripsi, sks, programstudi) VALUES (%s,%s,%s,%s)", 
+        cur.execute("INSERT INTO mata_kuliah ( judul, deskripsi, sks, programstudi, semester) VALUES (%s,%s,%s,%s)", 
         (judul, deskripsi, sks, programstudi))
         mysql.connection.commit()
         flash('Mata kuliah berhasil ditambahkan!')
@@ -155,6 +158,7 @@ def update_contact1(kode):
         deskripsi = request.form['deskripsi']
         sks = request.form['sks']
         programstudi = request.form['programstudi']
+        semester = request.form['semester']
         cur = mysql.connection.cursor()
         cur.execute("""
             UPDATE mata_kuliah
@@ -196,6 +200,22 @@ def GM():
     data = cur.fetchall()
     cur.close()
     return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/GM', matakuliah = data)
+    
+@app.route('/matakuliah/TRPL', methods = ['GET'])
+def TRPL():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Teknik Rekayasa Perangkat Lunak'")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/TRPL', matakuliah = data)
+
+@app.route('/matakuliah/RKS', methods = ['GET'])
+def RKS():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Teknik Rekayasa Keamanan Siber'")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/RKS', matakuliah = data)
 
 # Jalankan aplikasi dengan port 9999
 if __name__ == "__main__":

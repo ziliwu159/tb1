@@ -14,6 +14,8 @@
         <li><a class="dropdown-item" href="matakuliah/IF">IF</a></li>
         <li><a class="dropdown-item" href="matakuliah/TRM">TRM</a></li>
         <li><a class="dropdown-item" href="matakuliah/GM">GM</a></li>
+        <li><a class="dropdown-item" href="matakuliah/TRPL">TRPL</a></li>
+        <li><a class="dropdown-item" href="matakuliah/RKS">RKS</a></li>
       </ul>
     </div>
   </div>
@@ -35,6 +37,7 @@
             <td>Deskripsi </td>
             <td>SKS</td>
             <td>Program Studi</td>
+            <td>Semester</td>
             <td>Aksi</td>
           </tr>
         </thead>
@@ -46,6 +49,7 @@
             <td>{{item.2}}</td>
             <td>{{item.3}}</td>
             <td>{{item.4}}</td>
+            <td>{{item.5}}</td>
             <td>
               <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
               <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>

@@ -3,48 +3,88 @@
 <h2 class="display-6">Tambah Mata Kuliah</h2>
 <hr />
 <div class="row justify-content-center">
-    <div class="col-md-12">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/matakuliah">Mata Kuliah</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tambah Mata Kuliah</li>
-            </ol>
-        </nav>
+  <div class="col-md-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/matakuliah">Mata Kuliah</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Tambah Mata Kuliah
+        </li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="col-md-8">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
     </div>
+    {% endfor %} {% endif %} {% endwith %}
 
-    <div class="col-md-8">
-        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">{{ message }}</div>
-        {% endfor %} {% endif %} {% endwith %}
-
-        <div class="card card-body">
-            <form action="/matakuliah/insert" method="POST">
-                <div class="mb-3">
-                    <label for="judul" class="form-label">Judul</label>
-                    <input type="text" class="form-control" name="judul" placeholder="Judul" />
-                </div>
-                <div class="mb-3">
-                    <label for="deskripsi" class="form-label">Deskripsi</label>
-                    <input type="text" class="form-control" name="deskripsi" placeholder="Deskripsi" />
-                </div>
-                <div class="mb-3">
-                    <label for="sks" class="form-label">SKS</label>
-                    <input type="number" class="form-control" name="sks" placeholder="SKS" />
-                </div>
-                <div class="mb-3">
-                    <label for="programstudi" class="form-label">Program Studi</label>
-                    <!-- <input type="text" class="form-control" name="programstudi" placeholder="Program Studi" /> -->
-                    <select name="programstudi" class="form-select" aria-label="Default select example">
-                        <option selected disabled>-- Program Studi --</option>
-                        <option value="Teknik Informatika">Teknik Informatika</option>
-                        <option value="Geomatika">Geomatika</option>
-                        <option value="Teknik Rekayasa Multimedia">Teknik Rekayasa Multimedia</option>
-                    </select>
-                </div>
-                <button class="btn btn-primary btn-block">Tambah</button>
-            </form>
+    <div class="card card-body">
+      <form action="/matakuliah/insert" method="POST">
+        <div class="mb-3">
+          <label for="judul" class="form-label">Judul</label>
+          <input
+            type="text"
+            class="form-control"
+            name="judul"
+            placeholder="Judul"
+          />
         </div>
+        <div class="mb-3">
+          <label for="deskripsi" class="form-label">Deskripsi</label>
+          <input
+            type="text"
+            class="form-control"
+            name="deskripsi"
+            placeholder="Deskripsi"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="sks" class="form-label">SKS</label>
+          <input
+            type="number"
+            class="form-control"
+            name="sks"
+            placeholder="SKS"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="programstudi" class="form-label">Program Studi</label>
+          <!-- <input type="text" class="form-control" name="programstudi" placeholder="Program Studi" /> -->
+          <select
+            name="programstudi"
+            class="form-select"
+            aria-label="Default select example">
+            <option selected disabled>-- Program Studi --</option>
+            <option value="Teknik Informatika">Teknik Informatika</option>
+            <option value="Geomatika">Geomatika</option>
+            <option value="Teknik Rekayasa Multimedia">Teknik Rekayasa Multimedia</option>
+            <option value="Teknik Rekayasa Keamanan Siber">Rekayasa Keamanan Siber</option>
+            <option value="Teknik Rekayasa Perangkat Lunak">Teknik Rekayasa Perangkat Lunak</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="semester" class="form-label">Semester</label>
+          <!-- <input type="text" class="form-control" name="programstudi" placeholder="Program Studi" /> -->
+          <select name="semester" class="form-select" aria-label="Default select example">
+            <option selected disabled>-- Semester --</option>
+            <option value="Semester 1">Semester 1</option>
+            <option value="Semester 2">Semester 2</option>
+            <option value="Semester 3">Semester 3</option>
+            <option value="Semester 4">Semester 4</option>
+            <option value="Semester 5">Semester 5</option>
+            <option value="Semester 6">Semester 6</option>
+            <option value="Semester 7">Semester 7</option>
+            <option value="Semester 8">Semester 8</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block">Tambah</button>
+      </form>
     </div>
+  </div>
 </div>
 
 {% endblock %}
