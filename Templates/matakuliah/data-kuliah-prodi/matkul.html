@@ -1,114 +1,151 @@
-{% extends "matakuliah/data-kuliah-prodi/main.html" %}
-{% block table %}
+{% extends "matakuliah/data-kuliah-prodi/main.html" %} {% block table %} {% if
+path == '/matakuliah/IF' %}
+<tbody>
+  {% for item in matakuliah %}
+  <tr>
+    <td>{{item.0}}</td>
+    <td>{{item.1}}</td>
+    <td>{{item.2}}</td>
+    <td>{{item.3}}</td>
+    <td>{{item.4}}</td>
 
-{% if path == '/matakuliah/IF' %}
-  <tbody>
-    {% for item in matakuliah %}
-    <tr>
-      <td>{{item.0}}</td> 
-      <td>{{item.1}}</td>
-      <td>{{item.2}}</td>
-      <td>{{item.3}}</td>
-      <td>{{item.4}}</td>
-      
-      <td>
-        <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
-        <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
+    <td>
+      <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"
+        ><i class="fa-solid fa-pen-to-square"></i> Ubah</a
+      >
+      <a
+        href="/matakuliah/delete/{{item.0}}"
+        class="btn btn-danger btn-delete"
+        onclick="return confirm('Yakin???')"
+        ><i class="fa-solid fa-trash"></i> Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
 
 {% elif path == '/matakuliah/TRM' %}
-  <tbody>
-    {% for item in matakuliah %}
-    <tr>
-      <td>{{item.0}}</td> 
-      <td>{{item.1}}</td>
-      <td>{{item.2}}</td>
-      <td>{{item.3}}</td>
-      <td>{{item.4}}</td>
-      <
-      <td>
-        <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
-        <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
+<tbody>
+  {% for item in matakuliah %}
+  <tr>
+    <td>{{item.0}}</td>
+    <td>{{item.1}}</td>
+    <td>{{item.2}}</td>
+    <td>{{item.3}}</td>
+    <td>{{item.4}}</td>
+
+    <td>
+      <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"
+        ><i class="fa-solid fa-pen-to-square"></i> Ubah</a
+      >
+      <a
+        href="/matakuliah/delete/{{item.0}}"
+        class="btn btn-danger btn-delete"
+        onclick="return confirm('Yakin???')"
+        ><i class="fa-solid fa-trash"></i> Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
 
 {% elif path == '/matakuliah/GM' %}
-  <tbody>
-    {% for item in matakuliah %}
-    <tr>
-      <td>{{item.0}}</td> 
-      <td>{{item.1}}</td>
-      <td>{{item.2}}</td>
-      <td>{{item.3}}</td>
-      <td>{{item.4}}</td>
-      
-      <td>
-        <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
-        <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
+<tbody>
+  {% for item in matakuliah %}
+  <tr>
+    <td>{{item.0}}</td>
+    <td>{{item.1}}</td>
+    <td>{{item.2}}</td>
+    <td>{{item.3}}</td>
+    <td>{{item.4}}</td>
 
+    <td>
+      <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"
+        ><i class="fa-solid fa-pen-to-square"></i> Ubah</a
+      >
+      <a
+        href="/matakuliah/delete/{{item.0}}"
+        class="btn btn-danger btn-delete"
+        onclick="return confirm('Yakin???')"
+        ><i class="fa-solid fa-trash"></i> Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
 
 {% elif path == '/matakuliah/RKS' %}
-  <tbody>
-    {% for item in matakuliah %}
-    <tr>
-      <td>{{item.0}}</td> 
-      <td>{{item.1}}</td>
-      <td>{{item.2}}</td>
-      <td>{{item.3}}</td>
-      <td>{{item.4}}</td>
-      
-      <td>
-        <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
-        <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
+<tbody>
+  {% for item in matakuliah %}
+  <tr>
+    <td>{{item.0}}</td>
+    <td>{{item.1}}</td>
+    <td>{{item.2}}</td>
+    <td>{{item.3}}</td>
+    <td>{{item.4}}</td>
 
+    <td>
+      <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"
+        ><i class="fa-solid fa-pen-to-square"></i> Ubah</a
+      >
+      <a
+        href="/matakuliah/delete/{{item.0}}"
+        class="btn btn-danger btn-delete"
+        onclick="return confirm('Yakin???')"
+        ><i class="fa-solid fa-trash"></i> Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
 
 {% elif path == '/matakuliah/TRPL' %}
-  <tbody>
-    {% for item in matakuliah %}
-    <tr>
-      <td>{{item.0}}</td> 
-      <td>{{item.1}}</td>
-      <td>{{item.2}}</td>
-      <td>{{item.3}}</td>
-      <td>{{item.4}}</td>
-      
-      <td>
-        <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
-        <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
+<tbody>
+  {% for item in matakuliah %}
+  <tr>
+    <td>{{item.0}}</td>
+    <td>{{item.1}}</td>
+    <td>{{item.2}}</td>
+    <td>{{item.3}}</td>
+    <td>{{item.4}}</td>
 
-  {% elif path == '/matakuliah/AN' %}
-  <tbody>
-    {% for item in matakuliah %}
-    <tr>
-      <td>{{item.0}}</td> 
-      <td>{{item.1}}</td>
-      <td>{{item.2}}</td>
-      <td>{{item.3}}</td>
-      <td>{{item.4}}</td>
-      
-      <td>
-        <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Ubah</a>
-        <a href="/matakuliah/delete/{{item.0}}" class="btn btn-danger btn-delete" onclick="return confirm('Yakin???')"><i class="fa-solid fa-trash"></i> Hapus</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-{% endif %}
-{%endblock%}
+    <td>
+      <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"
+        ><i class="fa-solid fa-pen-to-square"></i> Ubah</a
+      >
+      <a
+        href="/matakuliah/delete/{{item.0}}"
+        class="btn btn-danger btn-delete"
+        onclick="return confirm('Yakin???')"
+        ><i class="fa-solid fa-trash"></i> Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+
+{% elif path == '/matakuliah/AN' %}
+<tbody>
+  {% for item in matakuliah %}
+  <tr>
+    <td>{{item.0}}</td>
+    <td>{{item.1}}</td>
+    <td>{{item.2}}</td>
+    <td>{{item.3}}</td>
+    <td>{{item.4}}</td>
+
+    <td>
+      <a href="/matakuliah/edit/{{item.0}}" class="btn btn-primary"
+        ><i class="fa-solid fa-pen-to-square"></i> Ubah</a
+      >
+      <a
+        href="/matakuliah/delete/{{item.0}}"
+        class="btn btn-danger btn-delete"
+        onclick="return confirm('Yakin???')"
+        ><i class="fa-solid fa-trash"></i> Hapus</a
+      >
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+{% endif %} {%endblock%}

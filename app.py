@@ -137,7 +137,7 @@ def add_kuliah():
         semester = request.form['semester']
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO mata_kuliah ( judul, deskripsi, sks, programstudi, semester) VALUES (%s,%s,%s,%s,%s)", 
-        (judul, deskripsi, sks, programstudi))
+        (judul, deskripsi, sks, programstudi, semester))
         mysql.connection.commit()
         flash('Mata kuliah berhasil ditambahkan!')
         return redirect(url_for('data_kuliah'))
@@ -164,7 +164,7 @@ def update_contact1(kode):
             UPDATE mata_kuliah
             SET judul = %s, deskripsi = %s, sks = %s, programstudi = %s, semester = %s
             WHERE kode = %s
-        """, ( judul, deskripsi, sks, programstudi, kode))
+        """, ( judul, deskripsi, sks, programstudi,semester, kode))
         flash('Mata Kuliah berhasil diubah!')
         mysql.connection.commit()
         return redirect(url_for('data_kuliah'))
