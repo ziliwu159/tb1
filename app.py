@@ -136,7 +136,7 @@ def add_kuliah():
         programstudi = request.form['programstudi']
         semester = request.form['semester']
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO mata_kuliah ( judul, deskripsi, sks, programstudi, semester) VALUES (%s,%s,%s,%s)", 
+        cur.execute("INSERT INTO mata_kuliah ( judul, deskripsi, sks, programstudi, semester) VALUES (%s,%s,%s,%s,%s)", 
         (judul, deskripsi, sks, programstudi))
         mysql.connection.commit()
         flash('Mata kuliah berhasil ditambahkan!')
@@ -162,7 +162,7 @@ def update_contact1(kode):
         cur = mysql.connection.cursor()
         cur.execute("""
             UPDATE mata_kuliah
-            SET judul = %s, deskripsi = %s, sks = %s, programstudi = %s
+            SET judul = %s, deskripsi = %s, sks = %s, programstudi = %s, semester = %s
             WHERE kode = %s
         """, ( judul, deskripsi, sks, programstudi, kode))
         flash('Mata Kuliah berhasil diubah!')
@@ -216,6 +216,15 @@ def RKS():
     data = cur.fetchall()
     cur.close()
     return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/RKS', matakuliah = data)
+
+
+@app.route('/matakuliah/AN', methods = ['GET'])
+def AN():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM mata_kuliah WHERE programstudi = 'Animasi'")
+    data = cur.fetchall()
+    cur.close()
+    return render_template('matakuliah/data-kuliah-prodi/matkul.html', path='/matakuliah/AN', matakuliah = data)
 
 # Jalankan aplikasi dengan port 9999
 if __name__ == "__main__":
