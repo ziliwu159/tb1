@@ -14,6 +14,13 @@ mysql = MySQL(app)
 # APP secret key (bebas)
 app.secret_key = "4cc645e832bc2ed0869da6d3a9bdc0ea"
 
+def _ini_(self, judul, deskripsi, sks, programstudi, semester):
+        self.judul = judul
+        self.deskripsi = deskripsi
+        self.sks = sks
+        self.programstudi = programstudi
+        self.semester = semester
+         
 # definisi fungsi dan route untuk URL agar bisa diakses oleh browser
 @app.route('/', methods = ['GET'])
 def login():
@@ -164,7 +171,7 @@ def update_contact1(kode):
             UPDATE mata_kuliah
             SET judul = %s, deskripsi = %s, sks = %s, programstudi = %s, semester = %s
             WHERE kode = %s
-        """, ( judul, deskripsi, sks, programstudi,semester, kode))
+        """, ( judul, deskripsi, sks, programstudi, semester, kode))
         flash('Mata Kuliah berhasil diubah!')
         mysql.connection.commit()
         return redirect(url_for('data_kuliah'))

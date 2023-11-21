@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" />
 
 </head>
-<body style="background-image: {{ url_for('static', filename='images/header.jpg') }}" />
+<body>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
@@ -39,7 +39,9 @@
 
 
                 <div class="card-body">
+                  <div class="login-box"></div>  
                     <form action="/verifikasi-login" method="POST">
+                        
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
                             <input type="email" class="form-control" name="email" aria-describedby="emailHelp" required>
@@ -48,12 +50,13 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <div><button type="submit" class="btn">Login</button></div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
