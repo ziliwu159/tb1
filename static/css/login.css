@@ -1,5 +1,6 @@
 body {
-    background-image: url_for('static', filename='images/header.jpg');
-    background-size: cover;
-    background-position: center; 
+  background-image: url_for("static", filename= "images/header.jpg");
+  background-image: url("/static/images/header.jpg");
+  background-size: cover;
+  background-position: center;
 }

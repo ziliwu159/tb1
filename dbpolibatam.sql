@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 05:10 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Nov 21, 2023 at 02:41 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,38 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
---
-
-CREATE TABLE `kelas` (
-  `id` int(11) NOT NULL,
-  `kelas` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `mata_kuliah`
 --
 
 CREATE TABLE `mata_kuliah` (
   `kode` int(10) NOT NULL,
-  `judul` varchar(50) NOT NULL,
-  `deskripsi` varchar(255) NOT NULL,
+  `judul` varchar(30) NOT NULL,
+  `deskripsi` varchar(50) NOT NULL,
   `sks` int(10) NOT NULL,
-  `programstudi` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `programstudi` varchar(40) NOT NULL,
+  `semester` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `mata_kuliah`
 --
 
-INSERT INTO `mata_kuliah` (`kode`, `judul`, `deskripsi`, `sks`, `programstudi`) VALUES
-(1, 'Dasar Pemrograman ', 'Masi Dasar Aman Cuk', 10, 'Teknik Informatika'),
-(2, 'Filosofi Bumi', 'Dasar Tanah', 3, 'Geomatika'),
-(3, 'Multimedia', 'Video, Image, Audio', 3, 'Teknik Rekayasa Multimedia'),
-(5, 'Matematika Geo', 'Geooo', 1, 'Geomatika'),
-(6, 'Dasar Pemrograman ', 'Video, Image, Audio', 3, 'Geomatika');
+INSERT INTO `mata_kuliah` (`kode`, `judul`, `deskripsi`, `sks`, `programstudi`, `semester`) VALUES
+(0, 'sadef', 'fdsa3', 3, 'Animasi', 8),
+(32, 'sdaf', 'fsd', 3, 'Animasi', 4),
+(101, 'Dasar Pemrograman', 'DPIF1B', 4, 'TEKNIK INFORMATIKA', 1),
+(696969, 'sadfsfd', 'fsdafdsaf', 2, 'Teknik Rekayasa Multimedia', 8);
 
 -- --------------------------------------------------------
 
@@ -68,7 +57,7 @@ CREATE TABLE `students` (
   `nim` varchar(255) NOT NULL,
   `nama_lengkap` varchar(255) NOT NULL,
   `alamat` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `students`
@@ -77,8 +66,8 @@ CREATE TABLE `students` (
 INSERT INTO `students` (`id`, `nim`, `nama_lengkap`, `alamat`) VALUES
 (10, '3312301035', 'YULIA PIPKA ZILIWU', 'SAGULUNG'),
 (13, '3312301037', 'KEVIN REYNALDI PANJAITAN', 'TANJUNG PIAYU'),
-(15, '3312301053', 'YURISHA ANINDYA', 'BENGKONG'),
-(16, '33123010533', 'Rysha Nidya', 'Tanjung Pinang, KM 17');
+(14, '3312301045', 'KENNY ARAGON', 'BATU AJI'),
+(15, '3312301053', 'YURISHA ANINDYA', 'BENGKONG');
 
 -- --------------------------------------------------------
 
@@ -90,7 +79,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -104,16 +93,11 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 --
 
 --
--- Indexes for table `kelas`
---
-ALTER TABLE `kelas`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `mata_kuliah`
 --
 ALTER TABLE `mata_kuliah`
-  ADD PRIMARY KEY (`kode`);
+  ADD PRIMARY KEY (`kode`),
+  ADD UNIQUE KEY `kode` (`kode`);
 
 --
 -- Indexes for table `students`
@@ -132,16 +116,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `mata_kuliah`
---
-ALTER TABLE `mata_kuliah`
-  MODIFY `kode` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
