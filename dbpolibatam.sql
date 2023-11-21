@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 02:41 PM
+-- Generation Time: Nov 21, 2023 at 08:05 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -32,7 +32,7 @@ CREATE TABLE `mata_kuliah` (
   `judul` varchar(30) NOT NULL,
   `deskripsi` varchar(50) NOT NULL,
   `sks` int(10) NOT NULL,
-  `programstudi` varchar(40) NOT NULL,
+  `programstudi` varchar(50) NOT NULL,
   `semester` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -41,10 +41,7 @@ CREATE TABLE `mata_kuliah` (
 --
 
 INSERT INTO `mata_kuliah` (`kode`, `judul`, `deskripsi`, `sks`, `programstudi`, `semester`) VALUES
-(0, 'sadef', 'fdsa3', 3, 'Animasi', 8),
-(32, 'sdaf', 'fsd', 3, 'Animasi', 4),
-(101, 'Dasar Pemrograman', 'DPIF1B', 4, 'TEKNIK INFORMATIKA', 1),
-(696969, 'sadfsfd', 'fsdafdsaf', 2, 'Teknik Rekayasa Multimedia', 8);
+(0, 'Dasar Validasi', '3KS108', 4, 'Teknik Rekayasa Keamanan Siber', 6);
 
 -- --------------------------------------------------------
 
@@ -96,8 +93,7 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 -- Indexes for table `mata_kuliah`
 --
 ALTER TABLE `mata_kuliah`
-  ADD PRIMARY KEY (`kode`),
-  ADD UNIQUE KEY `kode` (`kode`);
+  ADD PRIMARY KEY (`kode`);
 
 --
 -- Indexes for table `students`
