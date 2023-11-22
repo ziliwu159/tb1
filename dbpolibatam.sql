@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 08:05 PM
+-- Generation Time: Nov 22, 2023 at 03:58 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,9 @@ CREATE TABLE `mata_kuliah` (
 --
 
 INSERT INTO `mata_kuliah` (`kode`, `judul`, `deskripsi`, `sks`, `programstudi`, `semester`) VALUES
-(0, 'Dasar Validasi', '3KS108', 4, 'Teknik Rekayasa Keamanan Siber', 6);
+(1, 'MATEMATIKA', 'MTK5IF', 6, 'Animasi', 2),
+(2, 'Dasar Pemrograman', 'DPW', 2, 'Teknik Rekayasa Perangkat Lunak', 7),
+(3, 'Dasar Pemrograman', 'DPW', 2, 'Teknik Rekayasa Perangkat Lunak', 5);
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,8 @@ INSERT INTO `students` (`id`, `nim`, `nama_lengkap`, `alamat`) VALUES
 (10, '3312301035', 'YULIA PIPKA ZILIWU', 'SAGULUNG'),
 (13, '3312301037', 'KEVIN REYNALDI PANJAITAN', 'TANJUNG PIAYU'),
 (14, '3312301045', 'KENNY ARAGON', 'BATU AJI'),
-(15, '3312301053', 'YURISHA ANINDYA', 'BENGKONG');
+(15, '3312301053', 'YURISHA ANINDYA', 'BENGKONG'),
+(16, '3312301060', 'NISA', 'BATAM CENTRE');
 
 -- --------------------------------------------------------
 
@@ -112,10 +115,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `mata_kuliah`
+--
+ALTER TABLE `mata_kuliah`
+  MODIFY `kode` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `users`
