@@ -63,7 +63,7 @@ def dashboard():
 @app.route('/mahasiswa', methods = ['GET'])
 def data_mahasiswa():
     cur = mysql.connection.cursor()
-    cur.execute('SELECT id,nim,nama_lengkap,alamat FROM students ORDER BY nama_lengkap')
+    cur.execute('SELECT id,nim,nama_lengkap,alamat FROM students ORDER BY id')
     data = cur.fetchall()
     cur.close()
     return render_template('mahasiswa/data-mahasiswa.html', mahasiswa = data)
@@ -119,13 +119,10 @@ def delete_contact(id):
     return redirect(url_for('data_mahasiswa'))
 
 
-
-
-
 @app.route('/matakuliah', methods = ['GET'])
 def data_kuliah():
     cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM mata_kuliah ORDER BY programstudi')
+    cur.execute('SELECT * FROM mata_kuliah ORDER BY kode')
     data = cur.fetchall()
     cur.close()
     return render_template('matakuliah/data-kuliah.html', matakuliah = data)
