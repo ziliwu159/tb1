@@ -2,11 +2,11 @@
 {% block kontenku %}
   <h2 class="display-6">Manajemen Mata Kuliah</h2>
   <hr>
-  <a href="/matakuliah/tambah" class="btn btn-warning mb-1 mt-2"><i class="fa-solid fa-plus"></i> Tambah</a>
+  <a href="/matakuliah/tambah" class="btn btn-custom mb-1 mt-2"><i class="fa-solid fa-plus"></i> Tambah</a>
 
   <div class="d-flex justify-content-end mb-3">
     <div class="dropdown me-2 ">
-      <button class="btn btn-warning dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-info dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Program Studi
       </button>
       <ul class="dropdown-menu">
@@ -32,7 +32,11 @@
       {% endfor %} {% endif %} {% endwith %}
       <table class="table table-striped">
         <thead>
-          <tr class="bg-secondary text-white">
+          <tr class="bg-secondary text-white" style="background: linear-gradient(
+    to left,
+    rgba(203, 109, 198, 0.854),
+    rgb(21, 153, 201)
+  );">
             <td>Kode</td>
             <td>Judul</td>
             <td>Deskripsi </td>
